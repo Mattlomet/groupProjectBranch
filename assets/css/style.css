@@ -1,0 +1,53 @@
+body{
+    background: #EFEFEF;
+    
+}
+label {
+    font-size: 24px;
+}
+input{
+    text-align: right;
+    webkit-box-shadow: 0 0 0 30px white inset;
+    
+}
+
+.whiteBoxs {
+    background: white;
+    margin-top: 2vw;
+}
+.containerDiv {
+
+    color: #c7c7c7;
+}
+
+.searchFlightDiv {
+    background: white;
+    margin-top: 2vw;
+}
+
+.cardHeaders {
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+.buttonMargin{
+    margin-bottom: 2vw;
+}
+.searchTitle{
+    text-align: center;
+}
+.marginTopBottom{
+    padding: 0 auto;
+    margin: 0 auto;
+    overflow: none;
+}
+#mapDisplay{
+    height: 15vw;
+}
+#mapRow{
+    height: 15vw;
+}
+#directionsDisplay{
+    height: 15vw;
+    overflow: auto;
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RCB Flight Finder</title>
+
+    <!-- material icons -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- materialize cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+    <!-- link to style sheets (index.css is styling for lyft button) -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- link to firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+
+    <!-- moment js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- header -->
+    <nav>
+        <div class="nav-wrapper z-depth-1 red darken">
+            <div style="margin-left: 10px; margin-top: 5px" class="brand-logo">
+                <i class="material-icons">
+                    flight_takeoff
+                </i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- container -->
+    <div class="container-fluid containerDiv">
+
+        <div class="row" style="margin: 0 auto;">
+
+            <div class="col xl1"></div>
+
+            <!-- search for flight inputs -->
+            <div class="col xl2 m2 s10" style="float: center">
+                <div class="z-depth-2 searchFlightDiv">
+                    <div class="red darken row cardHeaders">
+                        <h3>Search Flight</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="row">
+                                <div class="col s12 searchTitle">
+                                    <h4>
+                                        Track By Flight
+                                    </h4>
+                                </div>
+                            </div>
+                            <!-- date -->
+                            <div class="row marginTopBottom">
+                                <div class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">calendar_today</i>
+                                            <input type="date" class="date-input">
+                                            <label id="date" for="autocomplete-input">date</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- depature aiport -->
+                            <div class="row marginTopBottom">
+                                <div class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">flight_takeoff</i>
+                                            <input type="text" id="departure-autocomplete-input" class="departure-airport-autocomplete-input">
+                                            <label id="departure-airport" for="departure-autocomplete-input">depature airport</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- arrival airport -->
+                        <div class="row marginTopBottom">
+                            <div class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">flight_landing</i>
+                                        <input type="text" id="arrival-autocomplete-input" class="arrival-airport-autocomplete-input">
+                                        <label id="arrival-airport" for="arrival-autocomplete-input">arrival airport</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- search button for inputs -->
+                    <div class=" row" style="text-align: center;">
+                        <button class="btn btn-large grey lighten-1 black-text" id="searchButton" style="margin-bottom: 2vw;">
+                            <i class="material-icons left">
+                                search
+                            </i>Search</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- flight results container (right side of page) -->
+            <div class="col xl8 s12">
+                <div class="whiteBoxs z-depth-2">
+                    <div class="row red darken cardHeaders">
+                        <h3>Flight Result</h3>
+                    </div>
+                    <!-- where results are dumped -->
+                    <div class="row" style="overflow: auto; height: 30vw;">
+                        <div class="col s12">
+                            <div id="flightResultDisplay"></div>
+                        </div>
+                    </div>
+
+                    <!-- buttons for flight functionality (google maps left)(lyft on the right) -->
+                    <div class=" row" style="text-align: center; display: none" id="buttonRow">
+                        <div class="col xl6 s6">
+                            <button class="btn btn-large grey lighten-1 black-text buttonMargin" style="margin-bottom: 2vw;" id="googleButton">
+                                <i class="material-icons right">
+                                    directions
+                                </i>Directions</button>
+                        </div>
+                        <div class="col xl6 s6">
+                            <button id="lyft-web-button-parent" class="btn btn-large grey lighten-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+    <!-- jquery cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTCin2wsXqXY9Z5c3lj6IUsbDSRgaS3uU">
+    </script>
+    <!-- link to our javascript file -->
+    <script src="assets/javascript/app.js"></script>
+
+    <!-- link to materialize javascript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+
+
+</body>
+
+<style>
+    .lyft-web-button {
+        background: none;
+        border: none;
+        padding: 0px;
+    }
+</style>
+
+</html>
